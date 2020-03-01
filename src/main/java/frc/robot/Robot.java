@@ -18,13 +18,13 @@ import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 //import edu.wpi.first.wpilibj.buttons.Button;
 
-/**
+/** 
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the TimedRobot
  * documentation. If you change the name of this class or the package after
  * creating this project, you must also update the manifest file in the resource
  * directory.
- */
+ */  
 public class Robot extends TimedRobot {
     SpeedController m_frontLeft = new PWMVictorSPX(0);
     SpeedController m_rearLeft = new PWMVictorSPX(1);
