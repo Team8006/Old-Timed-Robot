@@ -7,6 +7,7 @@
 
 package frc.robot;
 
+import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.PWMVictorSPX;
 import edu.wpi.first.wpilibj.SpeedController;
@@ -23,8 +24,8 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
  * functions corresponding to each mode, as described in the TimedRobot
  * documentation. If you change the name of this class or the package after
  * creating this project, you must also update the manifest file in the resource
- * directory.
- */  
+ * directory. 
+ */
 public class Robot extends TimedRobot {
     SpeedController m_frontLeft = new PWMVictorSPX(0);
     SpeedController m_rearLeft = new PWMVictorSPX(1);
@@ -45,8 +46,8 @@ public class Robot extends TimedRobot {
 
   /**
    * This function is run when the robot is first started up and should be
-   * used for any initialization code.
-   */
+   * used for any initialization code. 
+   */ 
   @Override
   public void robotInit() {
   }
@@ -78,9 +79,11 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void teleopInit() {
+    CameraServer server = CameraServer.getInstance();
+    server.startAutomaticCapture();
   }
 
-  /**
+  /** 
    * This function is called periodically during teleoperated mode.
    */
   @Override
