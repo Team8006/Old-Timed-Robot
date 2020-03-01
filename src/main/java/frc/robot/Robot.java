@@ -7,6 +7,7 @@
 
 package frc.robot;
 
+import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.PWMVictorSPX;
 import edu.wpi.first.wpilibj.SpeedController;
@@ -78,9 +79,11 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void teleopInit() {
+    CameraServer server = CameraServer.getInstance();
+    server.startAutomaticCapture();
   }
 
-  /**
+  /** 
    * This function is called periodically during teleoperated mode.
    */
   @Override
