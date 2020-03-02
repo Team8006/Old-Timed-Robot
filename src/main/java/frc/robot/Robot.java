@@ -8,6 +8,9 @@
 package frc.robot;
 
 import edu.wpi.first.cameraserver.CameraServer;
+import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTableEntry;
+import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.PWMVictorSPX;
 import edu.wpi.first.wpilibj.SpeedController;
@@ -41,7 +44,17 @@ public class Robot extends TimedRobot {
     private final Joystick m_ps4 = new Joystick(0);
     private final XboxController m_xbox = new XboxController(1);
     private final Timer m_timer = new Timer();
+    
+       //limelight 
+       NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight");
+       NetworkTableEntry tx = table.getEntry("tx");
+       NetworkTableEntry ty = table.getEntry("ty");
+       NetworkTableEntry ta = table.getEntry("ta");
    
+       //read values periodically
+       double x = tx.getDouble(0.0);
+       double y = ty.getDouble(0.0);
+       double area = ta.getDouble(0.0);
 
 
   /**
