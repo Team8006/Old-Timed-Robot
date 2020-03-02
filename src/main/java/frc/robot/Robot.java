@@ -100,9 +100,9 @@ public class Robot extends TimedRobot {
     {
       rotate_sensitivity = 0.70;
     }
-    double xbox_move = (m_xbox.getTriggerAxis(Hand.kLeft) - m_xbox.getTriggerAxis(Hand.kRight)) * move_sensitivity;
+    double xbox_move = (m_xbox.getTriggerAxis(Hand.kRight) - m_xbox.getTriggerAxis(Hand.kLeft)) * move_sensitivity;
     double xbox_rotate = m_xbox.getX(Hand.kLeft) * rotate_sensitivity;
-    double ps4_move = (m_ps4.getRawAxis(3) - m_ps4.getRawAxis(4)) * move_sensitivity;
+    double ps4_move = (m_ps4.getRawAxis(4) - m_ps4.getRawAxis(3)) * move_sensitivity;
     double ps4_rotate = m_ps4.getX(Hand.kLeft) * rotate_sensitivity; 
     m_robotDrive.arcadeDrive(xbox_move + ps4_move, xbox_rotate + ps4_rotate);
   }
